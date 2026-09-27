@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
         Scanner inp = new Scanner(Main.class.getResourceAsStream("washes.txt"));
 
         int arrSize = inp.nextInt();
