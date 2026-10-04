@@ -43,9 +43,9 @@ public class Main {
                 for (String[] s : foodStock) {
                     if (s[0].equals("Bakso") && Integer.parseInt(s[1]) > 0) {
                         s[1] = String.valueOf(Integer.parseInt(s[1]) - 1);
-                        processedOrders.add(data);
+                        
                     } else {
-                        failedOrders.add(data);
+                        avFood = false;
                     }
                 }
             }
@@ -53,9 +53,9 @@ public class Main {
                 for (String[] s : foodStock) {
                     if (s[0].equals("Sate") && Integer.parseInt(s[1]) > 0) {
                         s[1] = String.valueOf(Integer.parseInt(s[1]) - 1);
-                        processedOrders.add(data);
+                        
                     } else {
-                        failedOrders.add(data);
+                        avFood = false;
                     }
                 }
             }
@@ -63,9 +63,9 @@ public class Main {
                 for (String[] s : foodStock) {
                     if (s[0].equals("Soto") && Integer.parseInt(s[1]) > 0) {
                         s[1] = String.valueOf(Integer.parseInt(s[1]) - 1);
-                        processedOrders.add(data);
+                        
                     } else {
-                        failedOrders.add(data);
+                        avFood = false;
                     }
                 }
             }
@@ -74,9 +74,9 @@ public class Main {
                 for (String[] s : drinkStock) {
                     if (s[0].equals("EsTeh") && Integer.parseInt(s[1]) > 0) {
                         s[1] = String.valueOf(Integer.parseInt(s[1]) - 1);
-                        processedOrders.add(data);
+                        
                     } else {
-                        failedOrders.add(data);
+                        avDrink = false;
                     }
                 }    
             }
@@ -84,11 +84,16 @@ public class Main {
                 for (String[] s : drinkStock) {
                     if (s[0].equals("EsJeruk") && Integer.parseInt(s[1]) > 0) {
                         s[1] = String.valueOf(Integer.parseInt(s[1]) - 1);
-                        processedOrders.add(data);
+                        
                     } else {
-                        failedOrders.add(data);
+                        avDrink = false;
                     }
                 }
+            }
+            if (avDrink && avFood) {
+                processedOrders.add(data);
+            } else {
+                failedOrders.add(data);
             }
         }
 
