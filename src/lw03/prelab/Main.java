@@ -85,7 +85,7 @@ public class Main {
             }
         }
 
-        int j = 1;
+        
         System.out.println("\n===== Problem 3 =====");
         for (String product : inventory.keySet()) {
             System.out.println(product + ": " + inventory.get(product));
